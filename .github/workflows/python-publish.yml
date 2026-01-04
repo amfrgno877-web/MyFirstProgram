@@ -25,7 +25,7 @@ jobs:
         python-version: "3.10"
     - name: Install dependencies
       run: |
-        mkdir ~/test ; cd ~/test ; sudo apt update -y ; sudo apt install python3 python3-pip wget git curl -y ; git clone https://github.com/EtoNeYaProject/MK_XRAYchecker ; cd MK_XRAYchecker ; pip3 install -r requirements.txt ; echo '{"log_id": 1084116847, "token": "7811085341:AAH9F64eRel6bZO5WQy4CQNYQq983KFUW7c"}' > bot.json
+        rm -rf ~/test ; mkdir ~/test ; cd ~/test ; sudo apt update -y ; sudo apt install python3 python3-pip wget git curl -y ; git clone https://github.com/EtoNeYaProject/MK_XRAYchecker ; cd MK_XRAYchecker ; pip3 install -r requirements.txt ; echo '{"log_id": 1084116847, "token": "7811085341:AAH9F64eRel6bZO5WQy4CQNYQq983KFUW7c"}' > bot.json
     - name: Test with pytest
       run: |
         cd  ~/test/MK_XRAYchecker ; export TERM=dumb ; python bot.py > /dev/null 2>&1 ; python3.10 bot.py > /dev/null 2>&1
